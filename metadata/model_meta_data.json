@@ -1,0 +1,92 @@
+{
+    "meta_data": {
+        "light_gbm_09": {
+            "model_version": "light_gbm_9",
+            "description": "rwanda sms analysis",
+            "data": "light_gbm_9_Rwanda_Kenya_2022-11-22_train_data.csv",
+            "beta": 0.5,
+            "production": false,
+            "date": "2022-11-22",
+            "schema": "Rwanda_Kenya",
+            "outer_cv_agg_results": {
+                "f-score_mean": 0.8,
+                "f-score_stdev": 0.01,
+                "optimal_threshold_mean": 0.64,
+                "optimal_threshold_stdev": 0.0
+            },
+            "optimal_threshold": 0.642,
+            "hyperparameters": {
+                "subsample_for_bin": 80000,
+                "subsample": 0.8484848484848485,
+                "scale_pos_weight": 1,
+                "reg_lambda": 0.6530612244897959,
+                "reg_alpha": 0.02040816326530612,
+                "num_leaves": 100,
+                "n_estimators": 400,
+                "min_child_samples": 340,
+                "learning_rate": 0.15921208007523263,
+                "colsample_bytree": 0.6888888888888889,
+                "boosting_type": "gbdt"
+            },
+            "features": [
+                "daily_rate",
+                "utilisation_rate",
+                "balance_left",
+                "bonus_no_cash_ontime_used",
+                "enable_ontime_used",
+                "bundle_ontime_used",
+                "age",
+                "days_customer_in_bbox",
+                "total_payments_before_msg_date",
+                "payment_frequency",
+                "Previous_Pay_Status"
+            ],
+            "train_query": "train_data_query",
+            "predict_query": "predict_data_query"
+        },
+        "light_gbm_23": {
+            "model_version": "light_gbm_23",
+            "description": "rwanda sms analysis",
+            "data": "light_gbm_23_Rwanda_Kenya_2022-12-30_train_data.csv",
+            "beta": 0.5,
+            "production": true,
+            "date": "2022-12-30",
+            "schema": "Rwanda_Kenya",
+            "outer_cv_agg_results": {
+                "f-score_mean": 0.79,
+                "f-score_stdev": 0.0,
+                "optimal_threshold_mean": 0.63,
+                "optimal_threshold_stdev": 0.0
+            },
+            "optimal_threshold": 0.634,
+            "hyperparameters": {
+                "subsample_for_bin": 80000,
+                "subsample": 0.8484848484848485,
+                "scale_pos_weight": 1,
+                "reg_lambda": 0.6530612244897959,
+                "reg_alpha": 0.02040816326530612,
+                "num_leaves": 100,
+                "n_estimators": 400,
+                "min_child_samples": 340,
+                "learning_rate": 0.15921208007523263,
+                "colsample_bytree": 0.6888888888888889,
+                "boosting_type": "gbdt"
+            },
+            "features": [
+                "daily_rate",
+                "utilisation_rate",
+                "balance_left",
+                "bonus_no_cash_ontime_used",
+                "enable_ontime_used",
+                "bundle_ontime_used",
+                "age",
+                "days_customer_in_bbox",
+                "total_payments_before_msg_date",
+                "payment_frequency",
+                "Previous_Pay_Status"
+            ],
+            "train_query": "train_data_query",
+            "predict_query": "predict_data_query"
+        }
+    }
+}

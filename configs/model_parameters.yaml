@@ -1,0 +1,6 @@
+light_gbm:
+  max_depth: -1
+  objective: "binary"
+  silent: True
+  metric: ""
+  n_jobs: -1

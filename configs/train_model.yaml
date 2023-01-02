@@ -1,0 +1,31 @@
+  version: "23"
+  description: "rwanda sms analysis"
+  production: True
+  model_type: "light_gbm"
+  schema: "Rwanda_Kenya"
+  train_query: "train_data_query"
+
+  predict_query: "predict_data_query"
+  seed: 42
+  beta: 0.5
+  model_features:
+    daily_rate: True
+    utilisation_rate: True
+    balance_left: True
+    bonus_no_cash_ontime_used: True
+    enable_ontime_used: True
+    bundle_ontime_used: True
+    age: True
+    days_customer_in_bbox: True
+    total_payments_before_msg_date: True
+    payment_frequency: True
+    Previous_Pay_Status: True
+  training_steps:
+    remove_outliers: True
+    handle_missing_values: True
+    encode_categorical_features: False
+  encoder_type: "frequency"
+  cv_parameters:
+    combinations: 10
+    outer_folds: 4
+    inner_folds: 4
