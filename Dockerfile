@@ -36,7 +36,7 @@ RUN apt-get update
 RUN pip install --upgrade pip
 RUN pip install -r requirements.txt
 COPY dags ${AIRFLOW_USER_HOME}/dags
-COPY data ${AIRFLOW_USER_HOME}/data
+
 COPY scripts ${AIRFLOW_USER_HOME}/scripts
 # Install required libraries
 EXPOSE 8008 8080
