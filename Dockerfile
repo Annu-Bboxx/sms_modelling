@@ -29,7 +29,6 @@ ENV LC_MESSAGES en_US.UTF-8
 
 COPY configs/airflow.cfg ${AIRFLOW_USER_HOME}/airflow.cfg
 COPY requirements.txt requirements.txt
-#RUN pip install git+https://github.com/fastai/fastai.git
 
 RUN apt-get upgrade
 RUN apt-get update
@@ -39,11 +38,9 @@ COPY dags ${AIRFLOW_USER_HOME}/dags
 
 COPY scripts ${AIRFLOW_USER_HOME}/scripts
 # Install required libraries
-EXPOSE 8008 8080
-#USER airflow
-#RUN chown -R airflow:airflow ${AIRFLOW_USER_HOME}
+#EXPOSE 8008 8080
+
 WORKDIR ${AIRFLOW_USER_HOME}
 COPY scripts/entrypoint.sh /entrypoint.sh
-#RUN chmod +x entrypoint.sh scripts/entrypoint.sh
-ENTRYPOINT ["/entrypoint.sh"]
-CMD ["webserver"]
+#ENTRYPOINT ["/entrypoint.sh"]
+#CMD ["webserver"]

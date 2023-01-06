@@ -23,14 +23,14 @@ train = BashOperator(
     retries=3,
     dag=dag,
 )
-serve_commands = """
-    lsof -i tcp:8008 | awk 'NR!=1 {print $2}' | xargs kill;
-    python3 /Users/annukajla/Documents/sms_modelling/src/pipelines/predict_model.py serve
-    """
+# serve_commands = """
+#     lsof -i tcp:8008 | awk 'NR!=1 {print $2}' | xargs kill;
+#     python3 /Users/annukajla/Documents/sms_modelling/src/pipelines/predict_model.py serve
+#     """
 serve = BashOperator(
     task_id='serve',
     depends_on_past=False,
-    bash_command=serve_commands,
+    bash_command='/Users/annukajla/Documents/sms_modelling/src/pipelines/predict_model.py ',
     retries=3,
     dag=dag,
 )
